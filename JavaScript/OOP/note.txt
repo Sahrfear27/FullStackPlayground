@@ -1,0 +1,27 @@
+Javascript is a dynamically typed language which mean the type of the variable is determined 
+at run time.
+The type is determined when the code runs, not when it is written.
+let data = "Hello"; // Initially a string
+data = 42;          // Now a number
+This gives flexibility but also gives the  chances to run time error.
+function add(a,b){
+    return a+b
+}
+console.log(add((2,3))) //5
+console.log(add(("2", "3"))) // "23" which return an unexpected behavior.
+
+TypeScript is statically typed which means the type of the data is determined at compile time and not at run time
+function add(a:number, b:numer){
+    return  a +b
+} 
+console.log(add(2,3)) //5
+console.log(add("2","3")) // Error: Argument of type string is not assignable to parameter of type number
+Importance of TypeScript: It catches the potential error during development reducing run time bugs.
+
+
+
+
+Object:An object is a collection of name/value pairs. Almost everthing in Javascript is an object. 
+Object encapsulate state management in properties and associate behavior in methods.
+Example: a car, which has properties like color, weight.. etc, and actions like honk(), move().. etc
+Example of object in javaascript: array, Date, error

@@ -1,0 +1,23 @@
+{
+  "name": "oop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon object.ts",
+    "pattern": "nodemon pattern.ts",
+    "string": "nodemon strings.ts",
+    "resussion": "nodemon recussion.ts",
+    "inherit": "nodemon inheritance.ts",
+    "class": "nodemon classes.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
+  }
+}
