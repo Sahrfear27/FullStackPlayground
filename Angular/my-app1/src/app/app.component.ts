@@ -3,20 +3,17 @@ import { RouterOutlet } from '@angular/router';
 import { WritableComponent } from './counter.component';
 import { ComputedSignalComponent } from './computed-signal.component';
 import { EffectComponent } from './effect.component';
+import { PipesControlFlowComponent } from './pipes.controlflow.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    WritableComponent,
-    ComputedSignalComponent,
-    // EffectComponent,
-  ],
+  imports: [RouterOutlet, PipesControlFlowComponent],
   template: `
-    <app-counter />
-    <app-computed-signal />
+    <!-- <app-counter /> -->
+    <!-- <app-computed-signal /> -->
     <!-- <app-effect /> -->
+    <app-pipes />
     <router-outlet />
   `,
   styles: [],
