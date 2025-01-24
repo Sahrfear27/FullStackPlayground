@@ -1,16 +1,17 @@
 import { NgClass, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
+import { QuadPipe } from './quad.pipe';
 
 @Component({
   selector: 'app-pipes',
   standalone: true,
-  imports: [NgStyle, NgClass],
+  imports: [NgStyle, NgClass, QuadPipe],
   template: `
     <div>
       <h1>ngClass Dierectives</h1>
       @for (item of users; track item.id; let idx= $index, e= $even ) {
       <p [ngClass]="e ? 'special' : 'normal'">
-        Items {{ idx }}: {{ item.name }}
+        Items {{ idx }}: Name: {{ item.name }}, Age:{{ item.age | quad }}
       </p>
       }
     </div>
@@ -36,11 +37,11 @@ import { Component } from '@angular/core';
 })
 export class PipesControlFlowComponent {
   users = [
-    { id: 1, name: 'sahrfear macarthy' },
-    { id: 2, name: 'Alves' },
-    { id: 4, name: 'Mary James' },
-    { id: 5, name: 'Joseph Smith' },
-    { id: 6, name: 'Kelvin Kline' },
-    { id: 8, name: 'Olivia Diallo' },
+    { id: 1, name: 'sahrfear macarthy', age: 20 },
+    { id: 2, name: 'Alves', age: 10 },
+    { id: 4, name: 'Mary James', age: 15 },
+    { id: 5, name: 'Joseph Smith', age: 10 },
+    { id: 6, name: 'Kelvin Kline', age: 5 },
+    { id: 8, name: 'Olivia Diallo', age: 16 },
   ];
 }
