@@ -15,7 +15,7 @@ export class ChangeColorDirective {
   #renderer2 = inject(Renderer2);
 
   ngOnInit() {
-    this.#element.nativeElement.style.fontSize = '30px';
+    // this.#element.nativeElement.style.fontSize = '30px';
     this.#renderer2.setStyle(this.#element.nativeElement, 'font-size', '30px');
   }
 
@@ -25,6 +25,7 @@ export class ChangeColorDirective {
       'background-color',
       'blue'
     );
+    this.#renderer2.setStyle(this.#element.nativeElement, 'color', 'white');
   }
   // HostListiners: It means listen to the host elements and execute the function the comes next
   @HostListener('mouseleave') handleMouseLeave() {
@@ -33,5 +34,6 @@ export class ChangeColorDirective {
       'background-color',
       'transparent'
     );
+    this.#renderer2.setStyle(this.#element.nativeElement, 'color', 'black');
   }
 }
