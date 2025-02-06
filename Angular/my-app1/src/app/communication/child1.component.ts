@@ -44,10 +44,9 @@ export class Child1Component {
     this.$userDetails.set([...this.$usersFromParent()]);
   }
   $id = input.required();
-  //
+  // Make http call immediately when the signal id is set and ready to use
   constructor() {
     effect(() => {
-      // Make http call immediately when the signal id is set and ready to use
       console.log(this.$id());
     });
   }

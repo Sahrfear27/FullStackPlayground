@@ -36,4 +36,12 @@ export class ChangeColorDirective {
     );
     this.#renderer2.setStyle(this.#element.nativeElement, 'color', 'black');
   }
+  @HostListener('click') handleClick() {
+    this.#renderer2.setStyle(
+      this.#element.nativeElement,
+      'background-color',
+      'transparent'
+    );
+    this.#renderer2.setStyle(this.#element.nativeElement, 'color', 'black');
+  }
 }

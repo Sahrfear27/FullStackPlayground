@@ -31,7 +31,6 @@ import { Component } from '@angular/core';
       .white {
         background-color: white;
       }
-  
   `,
 })
 export class Exercise1StudentComponent {
