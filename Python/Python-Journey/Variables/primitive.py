@@ -57,10 +57,15 @@ print(10*3)
 print(11/3)  # Return a floating point number
 print(11//3)  # Return an int number
 print(11 % 3)
-print(11 ** 3)
+print(2 ** 3)
 
 
 # Working with numbers
 print(round(11/3))  # round a number
 print(abs(-3))  # return the absolute value
 print(math.ceil(2.2))  # it round the number
+
+
+# Input and Type Conversion
+user_age = input("Enter your age \n")
+print(int(user_age))
