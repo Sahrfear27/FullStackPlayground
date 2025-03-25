@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
 import { Child1Component } from './child1.component';
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { Child2Component } from './child2.component';
 import { ChangeBackgroundDirective } from './change-background.directive';
+import { Child3Component } from './child3.component';
 type UserDetail = {
   id: number;
   username: string;
@@ -16,6 +17,8 @@ type UserDetail = {
     NgClass,
     Child2Component,
     ChangeBackgroundDirective,
+    Child3Component,
+    NgStyle,
   ],
   template: `
     <div [ngClass]="{ border: true, background: true, padding: true }">
@@ -35,6 +38,12 @@ type UserDetail = {
         <p appChangeBackground>
           The message from Child 2 is :{{ $displaymsg() }}
         </p>
+      </div>
+      <div [ngStyle]="{ background: 'brown' }">
+        <!-- Child component3 -->
+        <p>This message is from Child3 :{{ $data() }}</p>
+        <button (click)="sendToChild3()">Send to Child3</button>
+        <app-child3 [($msg)]="$data" />
       </div>
     </div>
   `,
@@ -58,5 +67,16 @@ export class CommunicationComponent {
   $displaymsg = signal<string>('');
   receiveMsg(event: string) {
     this.$displaymsg.set(event);
+  }
+
+  /**
+   Sending data to child 3 using model.
+   1. Create an event that will be use to send the data.
+   2. When the event is trigger, send the data to the child components
+   3. Render the child component using banana in a box syntax and pass the data
+   * */
+  $data = signal('');
+  sendToChild3() {
+    this.$data.set('Hello Child3, this is parent component');
   }
 }
