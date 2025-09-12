@@ -1,0 +1,39 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "ForgetFulRobot",
+      "request": "launch",
+      "mainClass": "InterviewPrep.ForgetFulRobot",
+      "projectName": "FullStackPlayground_db1175b8"
+    },
+    {
+      "type": "java",
+      "name": "Inheritance",
+      "request": "launch",
+      "mainClass": "OOP.Inheritance",
+      "projectName": "FullStackPlayground_db1175b8"
+    },
+    {
+      "type": "java",
+      "name": "Encapsulation",
+      "request": "launch",
+      "mainClass": "OOP.Encapsulation",
+      "projectName": "FullStackPlayground_db1175b8"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "415 ts-node debug Launch Program",
+      "runtimeArgs": ["-r", "ts-node/register", "--loader", "ts-node/esm"],
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}",
+      "outFiles": ["${workspaceFolder}/**/*.js"],
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    }
+  ]
+}

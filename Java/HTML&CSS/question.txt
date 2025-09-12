@@ -1,0 +1,6 @@
+“Sara and Abigail aim to streamline the trainer hiring process for Cogent University by creating a 
+straightforward and automated registration page for potential job candidates”
+
+Create a registration page using HTML where a Job aspirant can register himself.
+
+Let us make this page .

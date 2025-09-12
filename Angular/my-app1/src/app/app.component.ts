@@ -12,7 +12,7 @@ import { CommunicationComponent } from './communication/communication.component'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommunicationComponent],
+  imports: [RouterOutlet, ComputedSignalComponent],
   template: `
     <!-- <app-counter /> -->
     <!-- <app-computed-signal /> -->
@@ -21,7 +21,8 @@ import { CommunicationComponent } from './communication/communication.component'
     <!-- <app-exercise1-student /> -->
     <!-- <app-template-variable /> -->
     <!-- <app-exercise2 /> -->
-    <app-communication />
+    <!-- <app-communication /> -->
+    <app-computed-signal />
     <router-outlet />
   `,
   styles: [],
