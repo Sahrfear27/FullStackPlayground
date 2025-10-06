@@ -37,18 +37,49 @@ console.log(user2["Is Searching"]);
 // Computed properties: These allows dynamic creation of object properties. Use computed property if you do not know the value of the property
 console.log("\n====Computed properties===");
 const prompt = require("prompt-sync")();
-let fruits = prompt("How many Fruits do you want to buy: ");
+// let fruits = prompt("How many Fruits do you want to buy: ");
 
-let bag = {
-  [fruits]: 4,
-};
+// let bag = {
+//   [fruits]: 4,
+// };
 
-console.log(bag.mango);
-console.log(bag);
+// console.log(bag.mango);
+// console.log(bag);
 
-//Prroperty Existience: Using the In Opeators
+//Property Existience: Using the In Opeators
 
 for (keys in user) {
   console.log(keys);
   console.log(user[keys]);
+}
+
+/**
+ Ordered: Object are ordered.?
+ Note: Integer property are ordered
+ Others appear the way they are created
+ * **/
+
+console.log("\n=====Integers are printed in Ordered fomat====\n");
+let codes = {
+  49: "Germany",
+  232: "Sierra Leone",
+  1: "USA",
+};
+
+for (let code in codes) {
+  // This will print the objects in ascending order
+  console.log(`The country code for ${codes[code]} is ${code}`);
+}
+
+console.log("\n=====Othes  are printed in the way they were added====\n");
+
+let employee = {
+  name: "Sahrfear",
+  email: "sahrfear@gmail.com",
+  sex: "Male",
+  "Is Focus": true,
+};
+
+for (let pro in employee) {
+  console.log(`${pro}: ${employee[pro]}`);
 }
