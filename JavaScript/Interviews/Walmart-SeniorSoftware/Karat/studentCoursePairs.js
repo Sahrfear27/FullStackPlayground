@@ -3,6 +3,7 @@
 
 Your task is to return an object (dictionary) that maps every pair of students who share at least one 
 course to the list of shared courses.
+
  * **/
 
 // Example:
@@ -67,7 +68,6 @@ function findSharedCourses(enrollments) {
       }
     }
   }
-
   return studentPairToCourses;
 }
 const enrollmentsTest = [];
