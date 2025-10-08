@@ -11,7 +11,7 @@ let menu = {
 function multiplyNumeric(obj) {
   let result = {};
   for (let pro in obj) {
-    console.log(typeof obj[pro]);
+    // console.log(typeof obj[pro]);
     if (typeof obj[pro] === "number") {
       result[pro] = obj[pro] * 2;
     } else {

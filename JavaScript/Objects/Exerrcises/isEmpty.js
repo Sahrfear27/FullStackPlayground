@@ -14,17 +14,24 @@ function isEmpty2(obj) {
   return Object.keys(obj).length === 0;
 }
 let schedule = {};
-console.log(isEmpty(schedule));
+// console.log(isEmpty(schedule));
 
 schedule["3:30am"] = "Get up and study";
-console.log(Object.keys(schedule));
-console.log(isEmpty(schedule));
+// console.log(Object.keys(schedule));
+// console.log(isEmpty(schedule));
 
 let newSchedule = {};
-console.log(isEmpty2(newSchedule));
+// console.log(isEmpty2(newSchedule));
 
 newSchedule["Is active"] = true;
 newSchedule.name = "Sahrfear";
 newSchedule.pray = true;
 
-console.log(isEmpty2(newSchedule));
+// console.log(isEmpty2(newSchedule));
+
+// let user = {
+//   username: "sahrfear",
+//   age: 30,
+//   email: "sahrfear@gmail.com",
+// };
+// console.log(Object.entries(user));
