@@ -1,0 +1,137 @@
+class BankingSystem {
+  constructor() {
+    this.accounts = new Map();
+  }
+
+  //helper method
+  isAccExist(accountId) {
+    if (this.accounts.has(accountId)) {
+      return true;
+    }
+    return true;
+  }
+  //Part 1.1
+  // CREATE_ACCOUNT <accountId>
+  // Should create a new account with the given identifier if it doesn't already exist.
+  // Returns "true" if an account was successfully created,
+  // Returns "false" if an account with accountId already exists.
+  createAccount(accountId) {
+    if (this.accounts.has(accountId)) {
+      return false;
+    }
+    //if(this.isAccExist(accountId)) return false
+    this.accounts.set(accountId, { balance: 0, transaction: [] });
+    return true;
+  }
+  // //Par 1.2
+  // DEPOSIT <accountId> <amount>
+  // Should deposit the given amount of money to the specified account accountId
+  // Returns the total amount of money in the account after the query has been processed.
+  // If the specified account doesn't exist, it should return -1.
+  // Example: These inputs are provided as an example of how the input data can be structured, you may select any of these formats or come up with your
+  // Own one.
+
+  deposit(accountId, amount) {
+    if (!this.accounts.has(accountId)) {
+      return -1;
+    }
+    //if(this.isAccExist() || isNaN(amount) || amount < 0) return -1
+
+    this.accounts.get(accountId).balance += amount;
+    //this.accounts.get(accountId).transaction += amount;
+    return this.accounts[accountId];
+  }
+
+  withdraw(accountId, amount) {
+    const balance = this.accounts.get(accountId).balance;
+    if (!this.accounts.has(accountId) || balance < amount) {
+      return -1;
+    }
+    this.accounts.get(accountId).balance -= amount;
+    //this.accounts.get(accountId).transaction.push(amount);
+  }
+
+  transfer(fromId, toId, amount) {
+    const fromAccount = this.accounts.get(fromId);
+    if (
+      this.isAccExist(fromId) ||
+      this.isAccExist(toId) ||
+      fromId === toId ||
+      fromAccount.balance < amount
+    ) {
+      return -1;
+    }
+    this.accounts.get(fromId).balance -= amount;
+    this.accounts.get(toId).balance += amount;
+
+    // this.accounts.get(fromId).transaction += amount;
+    // this.accounts.get(toId).transaction += amount;
+    return this.accounts.get(fromId).balance; //
+  }
+
+  processOperations(operations) {
+    // Iterate through the list of operations
+    operations.forEach(([opType, ...args]) => {
+      // Map operation types to corresponding methods
+      const actionMap = {
+        CREATE_ACCOUNT: () => console.log(this.createAccount(args[0])),
+        DEPOSIT: () => console.log(this.deposit(args[0])),
+        WITHDRAW: () => console.log(this.withdraw(args[0])),
+        TRANSFER: () => console.log(this.transfer(args[0], args[1], args[2])),
+      };
+
+      // Execute the corresponding method if operation type is valid
+      if (actionMap[opType]) {
+        actionMap[opType]();
+      } else {
+        // Log an error for invalid operations
+        console.log("Invalid Operation");
+      }
+    });
+  }
+
+  checkBalance(accountId) {
+    if (this.accounts.has(accountId)) {
+      //if(this.isAccExist(accountId))
+      return this.accounts.accountId;
+    }
+  }
+  getWithMostTransaction() {
+    // If there are no accounts in the system, return an appropriate message
+    if (this.accounts.size === 0) {
+      return "No accounts available";
+    }
+    // Variables to track the account with the most transactions
+    let mostTransactions = null; // The account ID with the most transactions
+    let maxTransactions = 0; // The highest transaction count
+
+    // Iterate through each account in the Map
+    for (const [accountId, accountDetails] of this.accounts.entries()) {
+      const transactionCount = accountDetails.transaction.length; // Get the number of transactions for this account
+
+      // Update the mostTransactions and maxTransactions if the current account has more transactions
+      if (transactionCount > maxTransactions) {
+        maxTransactions = transactionCount;
+        mostTransactions = accountId;
+      }
+    }
+
+    // Return the account ID with the most transactions and the transaction count,
+    // or a message if no transactions exist
+    return mostTransactions
+      ? `Account with most transactions: '${mostTransactions}' (${maxTransactions} transactions).`
+      : "No transactions have been made.";
+  }
+
+  sortTransactions(accountId) {
+    if (!this.accounts.has(accountId)) {
+      this.log(`Failed to sort: Account '${accountId}' does not exist.`);
+      return -1;
+    }
+
+    const account = this.accounts.get(accountId);
+    account.transaction.sort((a, b) => a.amount - b.amount); // Sort transactions by amount in ascending order
+    this.log(`Transactions for '${accountId}' sorted by amount.`);
+    return account.transaction;
+  }
+}
