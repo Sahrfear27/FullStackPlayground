@@ -61,7 +61,6 @@ let recipeMap = new Map([
 ]);
 
 console.log(recipeMap);
-
 //Iterate over the keys of vegitable
 for (let veg of recipeMap.keys()) {
   console.log(veg);
