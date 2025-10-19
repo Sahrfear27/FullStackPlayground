@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "id": "2",
+      "text": "Read blogs",
+      "completed": false,
+      "dueDate": "2025-10-30"
+    },
+    {
+      "id": "e41b",
+      "text": "Pray Hard",
+      "completed": false,
+      "dueDate": "2025-10-15"
+    },
+    {
+      "id": "b468",
+      "text": "React Is Fun",
+      "completed": false,
+      "dueDate": "2025-10-09"
+    }
+  ]
+}
